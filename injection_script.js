@@ -574,15 +574,31 @@ domainBypass(/linkvertise\.(com|net)|link-to\.net/,()=>{
 		},2000)
 	})
 })
-domainBypass(/acortalo\.(live|xyz)/,()=>{
+// Enjoy! Your changes will be saved automatically.
+domainBypass(/acortalo\.(live|xyz|org)/,()=>{
+    
 	if(document.referrer.indexOf("megawarez")>-1)
 	{
 		const _ce=document.createElement
 		document.createElement=t=>{
 			let e=_ce.call(document,t)
-			e.submit=()=>safelyNavigate(data,true)
+			e.submit=()=>{safelyNavigate(data,true);console.log("megawares 4")}
 			return e
 		}
+		window.onload=(function() {
+            eClicked=true;number=1;sync=true;
+            console.log("true")
+            setTimeout(function(){
+                console.log("open")
+                openPopup()
+                let b=document.getElementById("download")
+                b.click()
+                setTimeout(function(){
+                let d=document.getElementById("got")
+                d.click()
+            },1000);
+            },1000);
+        });
 	}
 })
 domainBypass("apkpsp.com",()=>{
