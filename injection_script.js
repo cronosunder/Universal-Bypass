@@ -574,16 +574,28 @@ domainBypass(/linkvertise\.(com|net)|link-to\.net/,()=>{
 		},2000)
 	})
 })
-domainBypass(/acortalo\.(live|xyz)/,()=>{
-	if(document.referrer.indexOf("megawarez")>-1)
-	{
-		const _ce=document.createElement
-		document.createElement=t=>{
-			let e=_ce.call(document,t)
-			e.submit=()=>safelyNavigate(data,true)
-			return e
-		}
-	}
+
+// Enjoy! Your changes will be saved automatically.
+domainBypass(/acortalo\.(live|xyz|org)/, () => {
+
+  if (document.referrer.indexOf("megawarez") > -1) {
+    window.onload = (function () {
+      eClicked = true;
+      number = 1;
+      sync = true;
+      openPopup()
+    });
+    const _ce = document.createElement
+    document.createElement = t => {
+      console.log("megawares 3", t)
+      let e = _ce.call(document, t)
+      e.submit = () => {
+        safelyNavigate(data, true);
+        console.log("megawares 4")
+      }
+      return e
+    }
+  }
 })
 domainBypass("apkpsp.com",()=>{
 	ODP(window,"downloadButton",{
